@@ -1,0 +1,20 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Build and Run
+    init: |
+      mkdir -p build
+      cd build
+      cmake ..
+      make -j4
+    command: |
+      cd build
+      ./raylib_game
+
+vscode:
+  extensions:
+    - ms-vscode.cpptools
+    - twxs.cmake
+    - ms-vscode.cmake-tools
+    - formulahendry.code-runner
